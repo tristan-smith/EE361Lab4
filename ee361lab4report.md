@@ -21,6 +21,7 @@ Due: <++>
 \setcounter{page}{1}
 
 \section*{Abstract}
+This document outlines a procedure to qualitatively measure radio frequency (RF) signals in the real world, and to increase intuition when working with antennas and radio receivers. In these experiments, we use an affordable software defined radio (SDR) to tune in to public radio stations as far away as Vancouver, BC, as well as pick up public service bands used by emergency workers. Finally, we used the receiver to locate a hidden transmitter on campus.
 
 # Equipment and Parts
 
@@ -33,9 +34,46 @@ Due: <++>
 
 # Experimental Design
 
+## Tuning In To FM Radio
+First, we used our SDR receiver to tune in to an FM radio station.
+We adjusted the RF gain of the device to 19.7dB, and set the sample rate to 2.4 megasamples per second.
+We selected the "WFM" option to enable wideband FM, then listened in at 88.1MHz.
+Terry O'Reilly, of CBC/2's Under the Influence joined us for the duration of our measurements.
+
+## Antenna Placement and Orientation
+Next, we developed a strategy for measuring received power.
+We noticed that the relative power shown in the spectrum viewer varied widely over time, so we turned the decay of the spectrum up to about 50%.
+With a higher decay, we saw a more consistently shaped spectrum over a window of time.
+
+We saw two main shapes: a rounded triangular shape, and a rectangular shape.
+In the case of the rectangular shape, we measure both the width and height, and compute the area to measure received power.
+In the case of the rounded triangular shape, we reflected that a triangular shape in logarithmic scale is very close to an impulse in linear scale.
+So, we recorded the peak value, which was at the center frequency for each transmitter.
+
+We also recorded estimates of the signal-to-noise ratio, and noticed that antenna orientation had a large effect on the relative received power of the signal.
+
+## Effect of RF Gain
+Again, we tuned to 88.1MHz CBC/2 (Under the Influence, with Terry O'Reilly), and measured the following as we adjusted the RF gain of the SDR:
+
+- Noise Floor
+- SNR
+- Relative Received Power
+
+## Received Power Measurements of FM Radio Stations
+
+
+## Received Power Measurements of Digital FM Radio Stations
+
+
+## Public Service Frequencies
+
+
+## Foxhunting and Path-Loss Modeling
+
 # Results
 
-Table: Tuning In To an FM Radio Station \ref{fm}
+## Tuning In To FM Radio
+Table: Tuning In To an FM Radio Station \label{fm}
 
 | Property | Value |
 | ---- | --------- |
@@ -44,13 +82,19 @@ Table: Tuning In To an FM Radio Station \ref{fm}
 | Sample Rate (Msps) | 2.4 |
 | Tuner AGC | OFF |
 
-Table: Tuning in to KUGS \ref{kugs}
+Table: Tuning in to KUGS \label{kugs}
 
 | Property | Value |
 | --- | --- |
 | Noise Floor (dB) | -57 |
 
-Table: Effect of RF Gain, Measured at 88.1MHz \ref{rfgain}
+## Antenna Placement and Orientation
+
+
+## Effect of RF Gain
+
+
+Table: Effect of RF Gain, Measured at 88.1MHz \label{rfgain}
 
 | Gain (dB) | Noise Floor (dB) | Peak (dB) | SNR (dB) |
 | --------- | ---------------- | --------- | -------- |
@@ -58,6 +102,41 @@ Table: Effect of RF Gain, Measured at 88.1MHz \ref{rfgain}
 | 0 | -56 | -42 | 14 |
 | 49.6 | -35 | 5 (clipping) | 40 |
 | 29.7 | -50 | -12 | 38 |
+
+## Received Power Measurements of FM Radio Stations
+
+
+Table: Relative Received Power of Three Analog FM Radio Stations
+
+| Frequency (MHz) | Call Sign | Strength | Distance (mi) | Measured Relative Received Power (dB) | Effective Radiated Power |
+| --- | --- | --- | --- | --- | --- |
+| 88.1 | CBU/2 | Relatively peaky | 46.8 | -22dB |  |
+| 89.3 | KUGS |  | 1.0 | -30 |  |
+| 91.7 | KZAZ |  | 3.8 | -45 |  |
+
+## Received Power Measurements of Digital FM Radio Stations
+
+
+Table: Relative Received Power of Three Digital FM Radio Stations
+
+| Frequency (MHz) | Call Sign | Distance (mi) | Height x Width (dB x MHz) | Measured Relative Received Power (dB) | Effective Radiated Power |
+| --- | --- | --- | --- | --- | --- |
+| 92.9 | KISM | 16.7 | -35 x 0.075 | |
+| 103.5 | CHQM | 46.9 | -38.5 x 0.125 | |
+| 104.1 | KAFE | 16.7 | -54 x 0.070 | |
+
+## Public Service Frequencies
+
+
+Table: Public Service Frequencies
+
+| Frequency (MHz) | Public Service | Relative Received Power (dB) | RF Gain (dB) |
+| --- | --- | --- |
+| 453.225 | Police | -5 | 12.7 |
+| 453.55 | Unknown | Not Recorded | 12.5 |
+
+## Foxhunting and Path-Loss Modeling
+
 
 # Discussion
 
