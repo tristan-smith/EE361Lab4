@@ -14,7 +14,7 @@ references:
 
 Performed: May 10th, 2019
 
-Due: <++>
+Due: May 21st, 2019
 
 \thispagestyle{empty}
 \clearpage
@@ -34,7 +34,7 @@ This document outlines a procedure to qualitatively measure radio frequency (RF)
 
 # Experimental Design
 
-## Tuning In To FM Radio
+## Tuning In To FM Radio \label{design-fm-radio}
 First, we used our SDR receiver to tune in to an FM radio station.
 We adjusted the RF gain of the device to 19.7dB, and set the sample rate to 2.4 megasamples per second.
 We selected the "WFM" option to enable wideband FM, then listened in at 88.1MHz.
@@ -72,7 +72,10 @@ Again, we tuned to 88.1MHz CBC/2 (Under the Influence, with Terry O'Reilly), and
 
 # Results
 
-## Tuning In To FM Radio
+## FM Radio
+After adjusting our SDR as specified in Section \ref{design-fm-radio}, we picked up a station at 150.7MHz (Table \ref{fm}).
+Then, we tuned in to Western Washington University KUGS, as shown in Figure \ref{kugs}.
+
 Table: Tuning In To an FM Radio Station \label{fm}
 
 | Property | Value |
@@ -82,7 +85,11 @@ Table: Tuning In To an FM Radio Station \label{fm}
 | Sample Rate (Msps) | 2.4 |
 | Tuner AGC | OFF |
 
-Table: Tuning in to KUGS \label{kugs}
+![KUGS Radio Station\label{kugs}](./KUGS.PNG)
+
+After a few songs, we measured the noise floor (Table \ref{kugs}).
+
+Table: Tuning in to KUGS \label{kugs-table}
 
 | Property | Value |
 | --- | --- |
@@ -90,9 +97,25 @@ Table: Tuning in to KUGS \label{kugs}
 
 ## Antenna Placement and Orientation
 
+Next, we observed the effect of antenna orientation on the relative received power and the noise floor (Figures \ref{angle1}, \ref{angle2}, \ref{angle3}).
+As a part of these measurements, we noticed several sources of noise. There were several bands containing sharp spikes of interference.
+One of these spikes can be seen clearly in Figure \ref{angle1}.
+The noise floor was dependent on our location and direction as well.
+By moving the antenna, we were able to increase our SNR drastically, or even decrease it to almost zero (Figure \ref{angle3}).
+
+![Antenna Angle 1\label{angle1}](./angle1.PNG)
+
+![Antenna Angle 2\label{angle2}](./angle2.PNG)
+
+![Antenna Angle 3\label{angle3}](./angle3.PNG)
 
 ## Effect of RF Gain
 
+Still tuned in to KUGS, we adjusted the RF gain and measured the corresponding noise floor and peak relative received power.
+Using this data, we could calculate the SNR (Equation (@snrdb)).
+The most useable range of SNR without clipping was around 20dB to 30dB (Table \ref{rfgain}).
+
+(@snrdb) $$ SNR_dB = Peak_dB - Noise Floor_dB $$
 
 Table: Effect of RF Gain, Measured at 88.1MHz \label{rfgain}
 
@@ -104,7 +127,6 @@ Table: Effect of RF Gain, Measured at 88.1MHz \label{rfgain}
 | 29.7 | -50 | -12 | 38 |
 
 ## Received Power Measurements of FM Radio Stations
-
 
 Table: Relative Received Power of Three Analog FM Radio Stations
 
@@ -131,7 +153,7 @@ Table: Relative Received Power of Three Digital FM Radio Stations
 Table: Public Service Frequencies
 
 | Frequency (MHz) | Public Service | Relative Received Power (dB) | RF Gain (dB) |
-| --- | --- | --- |
+| --- | --- | --- | --- |
 | 453.225 | Police | -5 | 12.7 |
 | 453.55 | Unknown | Not Recorded | 12.5 |
 
