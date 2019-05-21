@@ -159,6 +159,12 @@ Table: Public Service Frequencies
 
 ## Foxhunting and Path-Loss Modeling
 
+\begin{figure}
+	\centering
+	\includegraphics{./WWUCampusMapWithMarkers.PNG}
+	\caption{Signal Map}
+	\label{signalMap}
+\end{figure}
 
 # Discussion
 
