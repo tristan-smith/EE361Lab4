@@ -7,7 +7,7 @@ peaks = [-20, -20, -25, -29, -20, -15, -11, -7, -20, -20, -30, -20, -10, -10, -5
 
 gains = [38.6, 38.6, 38.6, 38.6, 38.6, 38.6, 38.6, 38.6, 19.7, 19.7, 19.7, 19.7, 19.7, 19.7, 19.7, 19.7, 19.7];
 
-actualPeaks = peaks + gains;
+actualPeaks = peaks - gains;
 
 [sortedDistances, indexes] = sort(distances);
 
