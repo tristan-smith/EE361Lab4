@@ -183,11 +183,11 @@ Then, we
 
 Table: Relative Received Power of Three Digital FM Radio Stations
 
-| Frequency (MHz) | Call Sign | Distance (mi) | Height x Width (dB x MHz) | Measured Relative Received Power (dB) | Effective Radiated Power |
+| Frequency (MHz) | Call Sign | Distance (mi) | Height x Width (dB x MHz) | Measured Relative Received Power (dB) | Effective Radiated Power (kW) |
 | --- | --- | --- | --- | --- | --- |
-| 92.9 | KISM | 16.7 | -35 x 0.075 | |
-| 103.5 | CHQM | 46.9 | -38.5 x 0.125 | |
-| 104.1 | KAFE | 16.7 | -54 x 0.070 | |
+| 92.9 | KISM | 16.7 | -35 x 0.075 | | 50 |
+| 103.5 | CHQM | 46.9 | -38.5 x 0.125 | | 100 |
+| 104.1 | KAFE | 16.7 | -54 x 0.070 | | 60 |
 
 ## Public Service Frequencies
 
