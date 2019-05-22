@@ -110,6 +110,7 @@ We recorded ten points on a map as we searched for the transmitter, and more mea
 ## FM Radio
 After adjusting our SDR as specified in Section \ref{design-fm-radio}, we picked up a station at 150.7MHz (Table \ref{fm}).
 Then, we tuned in to Western Washington University KUGS, as shown in Figure \ref{kugs}.
+We found that there were many random spikes that occurred around our band of interest. 
 
 Table: Tuning In To an FM Radio Station \label{fm}
 
@@ -216,7 +217,31 @@ Table: Public Service Frequencies
 \end{figure}
 
 # Discussion
-## Test 
+
+## FM Radio 
+In \ref{design-fm-radio} we began to measure signals from external sources. We started out by receiving from KUGS, Westerns local radio station, because it was a signal that we were guaranteed to be able to receive. This was a wideband FM radio signal, which came through extremely clearly in our audio tests. 
+The other radio stations were much harder tune into, but this probably had something to do with our ability to navigate the application we were using. 
+The small spikes we were seeing in our spectrum was most likely from other radio stations or transmitters that were around our target frequency.
+
+## Antenna Placement and Orientation
+In \ref{design-orientation} we found that turning the decay down to about 50% was the most effective way to estimate power, because this was performing more averaging on the signal, which gave us a better picture of the signals average power over time. 
+We also found that measuring the peak value of the non-square signals was the best way to estimate their power, because the peak value was where the majority of the power was concentrated. This may not be apparent from the figures shown, but that is because they are on a dB scale, where as on a linear scale the center peak would be many times larger than any of the sidelobes. However for a rectangular pulse shape this would not work, because the whole rectangle has a constant height, which means that the power is distributed over the whole band. This means that we needed to take the total area of the rectangles to get the power of the signal, which simply requires us to convert the frequency spectrum to a dB scale and then you can simply add the width and height to get the power contained inside the signal. 
+
+## Effect of RF Gain
+
+
+## Received Power Measurements of FM Radio Stations
+
+
+## Received Power Measurements of Digital FM Radio Stations
+
+
+## Public Service Frequencies
+
+
+## Foxhunting and Path-Loss Modeling
+
+
 
 # Conclusion
 
