@@ -165,7 +165,7 @@ Table: Effect of RF Gain, Measured at 88.1MHz \label{rfgain}
 ## Received Power Measurements of FM Radio Stations
 
 Next, we measured the relative received power of three analog FM radio stations, as described in Section \ref{design-fm}.
-We recorded the details of each station in Table \ref{t-fm}
+We recorded the details of each station in Table \ref{t-fm}.
 
 Table: Relative Received Power of Three Analog FM Radio Stations\label{t-fm}
 
@@ -174,6 +174,7 @@ Table: Relative Received Power of Three Analog FM Radio Stations\label{t-fm}
 | 88.1 | CBU/2 | Relatively peaky | 46.8 | -22dB | 97.6 |
 | 89.3 | KUGS |  | 1.0 | -30 | 0.95 |
 | 91.7 | KZAZ |  | 3.8 | -45 | 0.12 |
+
 
 ## Received Power Measurements of Digital FM Radio Stations
 
@@ -190,17 +191,20 @@ Table: Relative Received Power of Three Digital FM Radio Stations
 	\begin{tabularx}{\textwidth}{X X X X X X}
 		\hline
 		Frequency (MHz) & Call Sign & Distance (mi) & Height x Width (dB x MHz)
-		& Measured Relative Received Power (dB) & Radiated Power \\ \hline 
+		& Measured Relative Received Power (dB) & Effective Radiated Power (kW) \\ \hline 
 		
-		92.9 & KISM & 16.7 & -35 x 0.075 &  &  \\
-		103.5 & CHQM & 46.9 & -38.5 x 0.125 &  & \\
-		104.1 & KAFE & 16.7 & -54 x 0.070 & & \\ [1ex] \hline
+		92.9 & KISM & 16.7 & -35 x 0.075 &  & 50 \\
+		103.5 & CHQM & 46.9 & -38.5 x 0.125 &  & 100 \\
+		104.1 & KAFE & 16.7 & -54 x 0.070 & & 60 \\ [1ex] \hline
 	\end{tabularx}
 \end{table}
 
 ## Public Service Frequencies
+We also measured relative received power in the public service frequency bands (Table \ref{results-pub}).
+These stations were sporadic and hard to pin down.
+We were able to identify one station as police, as well as listen to another station briefly without time to record any details.
 
-Table: Public Service Frequencies
+Table: Public Service Frequencies\label{results-pub}
 
 | Frequency (MHz) | Public Service | Relative Received Power (dB) | RF Gain (dB) |
 | --- | --- | --- | --- |
@@ -208,6 +212,31 @@ Table: Public Service Frequencies
 | 453.55 | Unknown | Not Recorded | 12.5 |
 
 ## Foxhunting and Path-Loss Modeling
+During the fox hunt for the hidden transmitter on campus, we recorded the following values at each location (Table \ref{locations}).
+The locations are shown in Figure \ref{signalMap}.
+
+Table: Relative Received Power at Labeled Location\label{locations}
+
+| Location (#) | Distance (m) | Relative Received Power (dB) | RF Gain (dB) |
+| --- | --- | --- | --- | --- |
+| 1 | 575.68 | -20 | 38.6 |
+| 2 | 664.6 | -20 | 38.6 |
+| 3 | 698.9 | -25 | 38.6 |
+| 4 | 654.25 | -29 | 38.6 |
+| 5 | 583.84 | -20 | 38.6 |
+| 6 | 491.85 | -15 | 38.6 |
+| 7 | 355.48 | -11 | 38.6 |
+| 8 | 308.29 | -7 | 38.6 |
+| 9 | 214.45 | -20 | 38.6 |
+| 10 | 236.37 | -20 | 19.7 | 
+| 11 | 304.86 | -30 | 19.7 | 
+| 12 | 245.82 | -20 | 19.7 | 
+| 13 | 175.55 | -10 | 19.7 | 
+| 14 | 120.41 | -10 | 19.7 | 
+| 15 | 83.973 | -5 | 19.7 | 
+| 16 | 50.89 | -2 | 19.7 | 
+| 17 | 53.425 | 0 | 19.7 | 
+
 
 \begin{figure}
 	\centering
