@@ -70,7 +70,7 @@ Again, we tuned to 88.1MHz CBC/2 (Under the Influence, with Terry O'Reilly), and
 - SNR
 - Relative Received Power
 
-## Received Power Measurements of FM Radio Stations
+## Received Power Measurements of FM Radio Stations\label{design-fm}
 Next, we developed a method to measure the relative received power of FM radio stations.
 First, we turned up the "S-Decay" on our spectrogram viewer.
 This allowed us to smooth out the changes in power due to volume changes in the audio being transmitted.
@@ -162,16 +162,24 @@ Table: Effect of RF Gain, Measured at 88.1MHz \label{rfgain}
 
 ## Received Power Measurements of FM Radio Stations
 
-Table: Relative Received Power of Three Analog FM Radio Stations
+Next, we measured the relative received power of three analog FM radio stations, as described in Section \ref{design-fm}.
+We recorded the details of each station in Table \ref{t-fm}
 
-| Frequency (MHz) | Call Sign | Strength | Distance (mi) | Measured Relative Received Power (dB) | Effective Radiated Power |
+Table: Relative Received Power of Three Analog FM Radio Stations\label{t-fm}
+
+| Frequency (MHz) | Call Sign | Strength | Distance (mi) | Measured Relative Received Power (dB) | Effective Radiated Power (kW) |
 | --- | --- | --- | --- | --- | --- |
-| 88.1 | CBU/2 | Relatively peaky | 46.8 | -22dB |  |
-| 89.3 | KUGS |  | 1.0 | -30 |  |
-| 91.7 | KZAZ |  | 3.8 | -45 |  |
+| 88.1 | CBU/2 | Relatively peaky | 46.8 | -22dB | 97.6 |
+| 89.3 | KUGS |  | 1.0 | -30 | 0.95 |
+| 91.7 | KZAZ |  | 3.8 | -45 | 0.12 |
 
 ## Received Power Measurements of Digital FM Radio Stations
 
+We also measured the relative received power of three digital FM radio stations. We performed this measurement by finding the area of each rectangular frequency content band.
+
+$$ Area = Height (dB) * Width (MHz) $$
+
+Then, we 
 
 Table: Relative Received Power of Three Digital FM Radio Stations
 
