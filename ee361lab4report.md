@@ -235,18 +235,18 @@ If our antenna matched the polarization of the transmitted signal then we would 
 In this section of the lab we fiddled with the RF gain quite a bit in order to test the effect it had on several parameters.  
 We found that the noise floor did not get changed much when we increased the gain, with a gain in the range of 0 to 30 keeping te noise floor around the -50 dB range. However when we increased our gain up to the maximum it could go to, we found that the noise floor was actually significantly increased. But increasing the gain most certainly corresponded with an increase in the noise floor level. 
 
-We belive that the non-linear noise floor must be highly related to the hardware itself, since the noise floor does not scale very heavily with the gain itself, meaning that a large portion of the noise must be being introduced after the gain stage, which could only happen inside the hardware itself.
+We believe that the non-linear noise floor must be highly related to the hardware itself, since the noise floor does not scale very heavily with the gain itself, meaning that a large portion of the noise must be being introduced after the gain stage, which could only happen inside the hardware itself.
 If we were to take any two data points with different gains, and get the noise floor at each of those points, we would be able to estimate the noise introduced by the hardware by subtracting one value from the other, and then dividing by the gain adjustment that we made. The noise difference value would likely be the portion of the noise that is actually introduced by the rf spectrum (if we assume the amplifier is completely linear). 
 
-Because the noise is not as correlated to the gain as the power is, increasing the RF gain increased the SNR of our signal by a very large amount. The only real limitation to increasing the RF gain all the way up was that it would introduce clipping in our signal, which is a non-linearty that we do not want introduced into our signal. Too small of a gain could mean that our SNR was not high enough for us to distinguish our signal from noise.
+Because the noise is not as correlated to the gain as the power is, increasing the RF gain increased the SNR of our signal by a very large amount. The only real limitation to increasing the RF gain all the way up was that it would introduce clipping in our signal, which is a non-linearity that we do not want introduced into our signal. Too small of a gain could mean that our SNR was not high enough for us to distinguish our signal from noise.
 
 A good SNR value that we found was somewhere between 20 and 30 dB, because this meant that we would not see clipping, but still have our noise be relatively low compared to the signal. But because the noise floor was so much lower than the signals we were looking at, really any gain above 10 and below 40 would probably have worked. 
 
 
-
-
 ## Received Power Measurements of FM Radio Stations
-
+We measured the relative received power from the FM stations by tuning into the specific frequency and then grabbing a peak.
+We then used the peak value of the FM broadcast signal to approximate the power of the signal, for reasons stated earlier. 
+We found that some of the received power values did not correspond with transmit towers in the way that we expected, with the received power corresponding inversely with distance to the transmitter, and corresponding positively with the amount of radiated power.
 
 ## Received Power Measurements of Digital FM Radio Stations
 
