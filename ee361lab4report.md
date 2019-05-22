@@ -8,6 +8,7 @@ header-includes: |
   \usepackage{amsmath}
   \usepackage{tabularx}
   \usepackage{float}
+  \usepackage{url}
 references: 
 - 
 ---
@@ -265,12 +266,24 @@ The static that we heard on the channel is probably a good indicator that the pu
 We did not hear much traffic on these frequencies, because these bands are not licensed off to the general public, and are protected so that those that can transmit on them can guarantee their messages will get through. 
 
 ## Foxhunting and Path-Loss Modeling
-In section 
-
+In section  
 
 # Conclusion
 
 # References
+
+
+
+\begin{thebibliography}{2}
+
+\bibitem{Lab Handout}
+A. Klein. "Lab 4: Measuring Received Signal Power" Western Washington University, Spring 2019.
+
+\bibitem{radio-locator}
+"Locator.com,” Radio. [Online]. Available: https://radio-locator.com/. [Accessed: 22-May-2019].
+
+\end{thebibliography}
+
 
 ::: {#refs}
 :::
