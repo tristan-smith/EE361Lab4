@@ -6,6 +6,7 @@ documentclass: article
 numbersections: true
 header-includes: |
   \usepackage{amsmath}
+  \usepackage{tabularx}
 references: 
 - 
 ---
@@ -141,11 +142,19 @@ Table: Effect of RF Gain, Measured at 88.1MHz \label{rfgain}
 
 Table: Relative Received Power of Three Analog FM Radio Stations
 
-| Frequency (MHz) | Call Sign | Strength | Distance (mi) | Measured Relative Received Power (dB) | Effective Radiated Power |
-| --- | --- | --- | --- | --- | --- |
-| 88.1 | CBU/2 | Relatively peaky | 46.8 | -22dB |  |
-| 89.3 | KUGS |  | 1.0 | -30 |  |
-| 91.7 | KZAZ |  | 3.8 | -45 |  |
+\begin{table}[h]
+	\centering
+	\begin{tabularx}{\textwidth}{X X X X X X}
+		\hline
+		Frequency (MHz) & Call Sign & Distance (mi) & Height x Width (dB x MHz)
+		& Measured Relative Received Power (dB) & Radiated Power \\ \hline 
+		
+		92.9 & KISM & 16.7 & -35 x 0.075 &  &  \\
+		103.5 & CHQM & 46.9 & -38.5 x 0.125 &  & \\
+		104.1 & KAFE & 16.7 & -54 x 0.070 & & \\ [1ex] \hline
+	\end{tabularx}
+\end{table}
+
 
 ## Received Power Measurements of Digital FM Radio Stations
 
@@ -159,7 +168,6 @@ Table: Relative Received Power of Three Digital FM Radio Stations
 | 104.1 | KAFE | 16.7 | -54 x 0.070 | |
 
 ## Public Service Frequencies
-
 
 Table: Public Service Frequencies
 
@@ -178,6 +186,7 @@ Table: Public Service Frequencies
 \end{figure}
 
 # Discussion
+## Test 
 
 # Conclusion
 
