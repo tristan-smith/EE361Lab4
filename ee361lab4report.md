@@ -7,6 +7,7 @@ numbersections: true
 header-includes: |
   \usepackage{amsmath}
   \usepackage{tabularx}
+  \usepackage{float}
 references: 
 - 
 ---
@@ -189,23 +190,20 @@ $$ Area = Height (dB) + Width (db) $$
 
 Table: Relative Received Power of Three Digital FM Radio Stations
 
-\begin{table}[h]
+\begin{table}[H]
 	\centering
 	\begin{tabularx}{\textwidth}{X X X X X X}
 		\hline
 		Frequency (MHz) & Call Sign & Distance (mi) & Height x Width (dB x MHz)
-		& Measured Relative Received Power (dB) & Radiated Power \\ \hline 
+		& Measured Relative Received Power (dBFS) & Radiated Power (dBW) \\ \hline 
 		
-		92.9 & KISM & 16.7 & -35 x 0.075 &  &  \\
-		103.5 & CHQM & 46.9 & -38.5 x 0.125 &  & \\
-		104.1 & KAFE & 16.7 & -54 x 0.070 & & \\ [1ex] \hline
+		92.9 & KISM & 16.7 & -35 x 0.075 & 62.5 & 94.0 \\
+		103.5 & CHQM & 46.9 & -38.5 x 0.125 & 63.4  & 100   \\
+		104.1 & KAFE & 16.7 & -54 x 0.070 & 42.9 & 95.6 \\ [1ex] \hline
 	\end{tabularx}
 \end{table}
 
 ## Public Service Frequencies
-The signals we received from the Public Service bands were often few and far between, and would only last for brief moments of signal followed by static. 
-These bands were extremely narrow in the frequency domain, and the audio quality was not nearly as good as the FM stations we listened to in previous parts. We had a hard time gathering all the necessary data for the 453.55 MHz band, even though we listened for several minutes on this band we only managed to see one transmittion that lasted for only a second.
-Because of this we were unable to gather the Relative Received Power of the signal. We also were unable to identify which public service was communicating on this band, but we suspect it was not a common public service because it did not show up on our website we used to look for Public Service bands.
 
 Table: Public Service Frequencies
 
@@ -232,7 +230,11 @@ The small spikes we were seeing in our spectrum was most likely from other radio
 
 ## Antenna Placement and Orientation
 In \ref{design-orientation} we found that turning the decay down to about 50% was the most effective way to estimate power, because this was performing more averaging on the signal, which gave us a better picture of the signals average power over time. 
-We also found that measuring the peak value of the non-square signals was the best way to estimate their power, because the peak value was where the majority of the power was concentrated. This may not be apparent from the figures shown, but that is because they are on a dB scale, where as on a linear scale the center peak would be many times larger than any of the sidelobes. However for a rectangular pulse shape this would not work, because the whole rectangle has a constant height, which means that the power is distributed over the whole band. This means that we needed to take the total area of the rectangles to get the power of the signal, which simply requires us to convert the frequency spectrum to a dB scale and then you can simply add the width and height to get the power contained inside the signal. 
+We also found that measuring the peak value of the non-square signals was the best way to estimate their power, because the peak value was where the majority of the power was concentrated. 
+This may not be apparent from the figures shown, but that is because they are on a dB scale, where as on a linear scale the center peak would be many times larger than any of the sidelobes.
+
+ However for a rectangular pulse shape this would not work, because the whole rectangle has a constant height, which means that the power is distributed over the whole band. This means that we needed to take the total area of the rectangles to get the power of the signal, which simply requires us to convert the frequency spectrum to a dB scale and then you can simply add the width and height to get the power contained inside the signal. 
+
 We found that the effect of antenna orientation was significant when trying to pick up signals. This is because of the polarization of the travelling waves.
 If our antenna matched the polarization of the transmitted signal then we would see additional power received. 
 
@@ -241,7 +243,7 @@ In this section of the lab we fiddled with the RF gain quite a bit in order to t
 We found that the noise floor did not get changed much when we increased the gain, with a gain in the range of 0 to 30 keeping te noise floor around the -50 dB range. However when we increased our gain up to the maximum it could go to, we found that the noise floor was actually significantly increased. But increasing the gain most certainly corresponded with an increase in the noise floor level. 
 
 We believe that the non-linear noise floor must be highly related to the hardware itself, since the noise floor does not scale very heavily with the gain itself, meaning that a large portion of the noise must be being introduced after the gain stage, which could only happen inside the hardware itself.
-If we were to take any two data points with different gains, and get the noise floor at each of those points, we would be able to estimate the noise introduced by the hardware by subtracting one value from the other, and then dividing by the gain adjustment that we made. The noise difference value would likely be the portion of the noise that is actually introduced by the rf spectrum (if we assume the amplifier is completely linear). 
+If we were to take any two data points with different gains, and get the noise floor at each of those points, we would be able to estimate the noise introduced by the hardware by subtracting one value from the other, and then dividing by the gain adjustment that we made. The noise difference value would likely be the portion of the noise that is actually introduced by the RF spectrum (if we assume the amplifier is completely linear). 
 
 Because the noise is not as correlated to the gain as the power is, increasing the RF gain increased the SNR of our signal by a very large amount. The only real limitation to increasing the RF gain all the way up was that it would introduce clipping in our signal, which is a non-linearity that we do not want introduced into our signal. Too small of a gain could mean that our SNR was not high enough for us to distinguish our signal from noise.
 
@@ -254,14 +256,16 @@ We then used the peak value of the FM broadcast signal to approximate the power 
 We found that some of the received power values did not correspond with transmit towers in the way that we expected, with the received power corresponding inversely with distance to the transmitter, and corresponding positively with the amount of radiated power.
 
 ## Received Power Measurements of Digital FM Radio Stations
-When measuring the digital FM spectrum we had to convert the frequency spectrum into a dB scale in order to calculate the total power, because we needed to have like units to multiply the peak power by the width of the signal. We converted the width in Hz to dB because we wanted the total power in dB, which would be an easy conversion if we simply stuck to dB for both portions of the signal. 
+When measuring the digital FM spectrum we had to convert the frequency spectrum into a dB scale in order to calculate the total power, because we needed to have like units to multiply the peak power by the width of the signal. We converted the width in Hz to dB because we wanted the total power in dB, which would be an easy conversion if we simply stuck to dB for both portions of the signal.
 
 
 ## Public Service Frequencies
-
+In this section we used the SDR to scan public service frequencies that did not have nearly as wide of a spectrum as the FM radio stations. We found that the signals present on the public service frequencies did not use up nearly as much bandwidth, which is probably why the audio quality was so much worse. It makes sense that the emergency numbers would not need as much bandwidth, because they do not care about the quality of their transmissions. 
+The static that we heard on the channel is probably a good indicator that the public service bands are mostly analog. 
+We did not hear much traffic on these frequencies, because these bands are not licensed off to the general public, and are protected so that those that can transmit on them can guarantee their messages will get through. 
 
 ## Foxhunting and Path-Loss Modeling
-
+In section 
 
 
 # Conclusion
