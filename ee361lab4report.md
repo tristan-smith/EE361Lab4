@@ -39,10 +39,12 @@ Higher SNR in our case came from increasing the amount of received power that we
 
 
 Electromagnetic signals traverse mediums by creating changing electric and magnetic fields. These fields have particular properties that can have a large influence on how much power you are receiving. The first property that can heavily influence how much received power you are getting is distance from transmitter to receiver, since for an isotropic receiver and transmitter you are radiating equal power out in all directions, the power of the signal is equally spread out over the surface of a sphere, which leads to a squared power loss over a distance. This means that if you were to go twice as far from the transmitter as you had been, you should receive four times less power. 
-Another factor that can heavily effect how much power you receive is the polarization of your antenna. As waves propogate out from the transmitter, they oscillate either vertically or horizontally, and on the receiver side if your antenna is not matched with the correct orientation then your received power will drop heavily. One final component that effects the received power of your signal is the multipath of the signals propogation. 
-Multipath happens when a signal bounces off of a peice of terrain like a building, but takes still finds it's way to the receiver. This can cause distortions in the signal, as 
+Another factor that can heavily effect how much power you receive is the polarization of your antenna. As waves propagate out from the transmitter, they oscillate either vertically or horizontally, and on the receiver side if your antenna is not matched with the correct orientation then your received power will drop heavily. 
+One final component that effects the received power of your signal is the multipath of the signals propagation. 
+Multipath happens when a signal bounces off of a piece of terrain like a building, but takes still finds it's way to the receiver. This can cause distortions in the signal, as 
 you can get either constructive or destructive interference based on the phase change that is introduced from the different amount of time that the two signals take to 
 reach the receiver.
+Antenna polarization is another subject that is important to radio transmissions, because it can heavily effect the received power. Antenna polarization is the orientation of the antenna with respect to the wave. Because Electromagnetic waves can either travel horizontally or vertically, if your antenna is not oriented in the same direction you will not be giving the signal its full potential to travel down your antenna, and therefore limit the amount of power that you can receive.  
 
 # Experimental Design
 
@@ -226,9 +228,11 @@ The small spikes we were seeing in our spectrum was most likely from other radio
 ## Antenna Placement and Orientation
 In \ref{design-orientation} we found that turning the decay down to about 50% was the most effective way to estimate power, because this was performing more averaging on the signal, which gave us a better picture of the signals average power over time. 
 We also found that measuring the peak value of the non-square signals was the best way to estimate their power, because the peak value was where the majority of the power was concentrated. This may not be apparent from the figures shown, but that is because they are on a dB scale, where as on a linear scale the center peak would be many times larger than any of the sidelobes. However for a rectangular pulse shape this would not work, because the whole rectangle has a constant height, which means that the power is distributed over the whole band. This means that we needed to take the total area of the rectangles to get the power of the signal, which simply requires us to convert the frequency spectrum to a dB scale and then you can simply add the width and height to get the power contained inside the signal. 
-Because the noise power was extremely low compared to our actual signal gains, we could effectively ignore the noise when 
+We found that the effect of antenna orientation was significant when trying to pick up signals. This is because of the polarization of the travelling waves.
+If our antenna matched the polarization of the transmitted signal then we would see additional power received. 
 
 ## Effect of RF Gain
+In 
 
 
 ## Received Power Measurements of FM Radio Stations
