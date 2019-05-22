@@ -179,11 +179,13 @@ Table: Relative Received Power of Three Analog FM Radio Stations\label{t-fm}
 
 ## Received Power Measurements of Digital FM Radio Stations
 
-We also measured the relative received power of three digital FM radio stations. We performed this measurement by finding the area of each rectangular frequency content band.
+We also measured the relative received power of three digital FM radio stations. We performed this measurement by finding the height (power at middle of rectangle) of each rectangular frequency content band and then measuring the width of the rectangle in MHz.
+Then, we converted the width to a decibel scale and added the two values. This is the equivalent of multiplying on the linear scale, which would give us the area of the rectangle. 
+$$ Width (dB) = 20*log_{10}(Width (Hz)) $$
+We estimated that the area of each rectangle was the total power transmitted in that signal. 
 
-$$ Area = Height (dB) * Width (MHz) $$
+$$ Area = Height (dB) + Width (db) $$
 
-Then, we 
 
 Table: Relative Received Power of Three Digital FM Radio Stations
 
@@ -201,6 +203,9 @@ Table: Relative Received Power of Three Digital FM Radio Stations
 \end{table}
 
 ## Public Service Frequencies
+The signals we received from the Public Service bands were often few and far between, and would only last for brief moments of signal followed by static. 
+These bands were extremely narrow in the frequency domain, and the audio quality was not nearly as good as the FM stations we listened to in previous parts. We had a hard time gathering all the necessary data for the 453.55 MHz band, even though we listened for several minutes on this band we only managed to see one transmittion that lasted for only a second.
+Because of this we were unable to gather the Relative Received Power of the signal. We also were unable to identify which public service was communicating on this band, but we suspect it was not a common public service because it did not show up on our website we used to look for Public Service bands.
 
 Table: Public Service Frequencies
 
@@ -249,6 +254,7 @@ We then used the peak value of the FM broadcast signal to approximate the power 
 We found that some of the received power values did not correspond with transmit towers in the way that we expected, with the received power corresponding inversely with distance to the transmitter, and corresponding positively with the amount of radiated power.
 
 ## Received Power Measurements of Digital FM Radio Stations
+When measuring the digital FM spectrum we had to convert the frequency spectrum into a dB scale in order to calculate the total power, because we needed to have like units to multiply the peak power by the width of the signal. We converted the width in Hz to dB because we wanted the total power in dB, which would be an easy conversion if we simply stuck to dB for both portions of the signal. 
 
 
 ## Public Service Frequencies
