@@ -51,13 +51,13 @@ We adjusted the RF gain of the device to 19.7dB, and set the sample rate to 2.4 
 We selected the "WFM" option to enable wideband FM, then listened in at 88.1MHz.
 Terry O'Reilly, of CBC/2's Under the Influence joined us for the duration of our measurements.
 
-## Antenna Placement and Orientation
+## Antenna Placement and Orientation\label{design-orientation}
 Next, we developed a strategy for measuring received power.
 We noticed that the relative power shown in the spectrum viewer varied widely over time, so we turned the decay of the spectrum up to about 50%.
 With a higher decay, we saw a more consistently shaped spectrum over a window of time.
 
-We saw two main shapes: a rounded triangular shape, and a rectangular shape.
-In the case of the rectangular shape, we measure both the width and height, and compute the area to measure received power.
+You will observe two main shapes: a rounded triangular shape, and a rectangular shape.
+In the case of the rectangular shape, we measured both the width and height, and compute the area to measure received power.
 In the case of the rounded triangular shape, we reflected that a triangular shape in logarithmic scale is very close to an impulse in linear scale.
 So, we recorded the peak value, which was at the center frequency for each transmitter.
 
@@ -71,15 +71,38 @@ Again, we tuned to 88.1MHz CBC/2 (Under the Influence, with Terry O'Reilly), and
 - Relative Received Power
 
 ## Received Power Measurements of FM Radio Stations
+Next, we developed a method to measure the relative received power of FM radio stations.
+First, we turned up the "S-Decay" on our spectrogram viewer.
+This allowed us to smooth out the changes in power due to volume changes in the audio being transmitted.
+As a result of this smoothing, we developed two strategies of measurement based on the two shapes mentioned in Section \ref{design-orientation}.
+As discussed in Section \ref{design-orientation}, for rectangular frequency content (Section \ref{design-digital}), we measured the width and height.
+For rounded triangular frequency content, we measured the peak value.
+We measured the relative received power of three different stations, and recorded the following details for each:
 
+- Call Letters
+- Frequency
+- Distance from Campus
+- Relative Receive Power
+- Effective Radiated Power (ERP)
 
-## Received Power Measurements of Digital FM Radio Stations
-
+## Received Power Measurements of Digital FM Radio Stations\label{design-digital}
+We repeated the procedure in Section \ref{design-fm} but for the digital transmissions located in the adjacent bands to some analog radio stations.
 
 ## Public Service Frequencies
+There are also several frequency bands used by the government and public service organizations.
+We switched our SDR's demodulation settings to narrowband FM (NFM) to match public service handheld transmitters.
+We also turned the "squelch" setting up to silence the noise during periods of silence.
+We recorded the following details:
 
+- Frequencies
+- Public service names
+- relative received power
 
 ## Foxhunting and Path-Loss Modeling
+Finally, we used the method of measuring relative received power previously developed to locate a hidden transmitter on campus.
+We switched our SDR back to wide-band FM, and tuned into 146.565MHz.
+We took periodic measurements of the signal's strength around campus, and walked in the direction of increasing received power.
+We recorded ten points on a map as we searched for the transmitter, and more measurements in close range of the transmitter once we were extremely close to it.
 
 # Results
 
