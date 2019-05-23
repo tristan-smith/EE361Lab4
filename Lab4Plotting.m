@@ -30,8 +30,10 @@ ylabel('Angle to target (\circ)');
 xlabel('Peak Values (dB)');
 grid on;
 
+i = 1:length(distances);
+
 % generate a markdown table from matlab data
-table = horzcat(distances', peaks', gains', actualPeaks');
+table = horzcat(i', distances', peaks', gains', actualPeaks');
 % then copy into a new file in Vim and run:
 % :%s/\t/ | /g
 % to replace tabs with ' | '
