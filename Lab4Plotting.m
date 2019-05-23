@@ -29,3 +29,18 @@ title('Peak Values v.s. Angle to Transmitter');
 ylabel('Angle to target (\circ)');
 xlabel('Peak Values (dB)');
 grid on;
+
+% generate a markdown table from matlab data
+table = horzcat(distances', peaks', gains', actualPeaks');
+% then copy into a new file in Vim and run:
+% :%s/\t/ | /g
+% to replace tabs with ' | '
+% then run:
+% :%s/^/| /g
+% to replace start of line with '| '
+% then run:
+% :%s/$/ |/g
+%
+% you can also run these three commands in place in a report,
+% just change the % to a range of lines this command should affect:
+% :10,20s/%/ |/g (for example)
