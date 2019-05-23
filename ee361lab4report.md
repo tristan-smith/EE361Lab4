@@ -366,10 +366,3 @@ A. Klein. "Lab 4: Measuring Received Signal Power" Western Washington University
 "Radio Locator,” Radio. [Online]. Available: https://radio-locator.com/. Theodric Technologies LLC. [Accessed: 22-May-2019].
 
 \end{thebibliography}
-
-
-::: {#refs}
-:::
-
-\appendix
-\section*{Appendices}
