@@ -347,10 +347,10 @@ In section
 
 \newpage
 # Conclusion
-This lab gave us the opportunity to learn how RF signals propogate through the air. 
+This lab gave us the opportunity to learn how RF signals propagate through the air. 
 It was also an excellent opportunity to learn about the different frequency bands, and how they are used. 
 We saw both digital and analog signals using our SDR, which gives us a better idea of what those types of communication will look like in the future, as well as their strengths and weaknesses. 
-We also were able to do many different measurements with relative received power, under many differing circumstances. 
+We also were able to perform many different measurements with relative received power, under many differing circumstances. 
 We were able to test how antenna orientation, distance, and line of sight effected the relative received power. 
 We were also able to adjust several digital parameters and determine their effects on the SNR and signal strength. Because of the SDR program that we were running, we saw how different power levels in signals showed up on the spectrum, and learned how to estimate relative received power based on the shape of the signal itself. 
 
