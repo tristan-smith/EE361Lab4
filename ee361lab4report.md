@@ -287,30 +287,41 @@ With these results, we plotted the signal strength versus the distance from the 
 # Discussion
 
 ## FM Radio 
-In \ref{design-fm-radio} we began to measure signals from external sources. We started out by receiving from KUGS, Westerns local radio station, because it was a signal that we were guaranteed to be able to receive. This was a wideband FM radio signal, which came through extremely clearly in our audio tests. 
+In \ref{design-fm-radio} we began to measure signals from external sources.
+We started out by receiving from KUGS, Westerns local radio station, because it was a signal that we were guaranteed to be able to receive.
+This was a wideband FM radio signal, which came through extremely clearly in our audio tests. 
 The other radio stations were much harder tune into, but this probably had something to do with our ability to navigate the application we were using. 
-The small spikes we were seeing in our spectrum was most likely from other radio stations or transmitters that were around our target frequency.
+The small spikes we saw in our spectrum were most likely from other radio stations or transmitters that were around our target frequency, as well as reflections from buildings and geography.
 
 ## Antenna Placement and Orientation
-In \ref{design-orientation} we found that turning the decay down to about 50% was the most effective way to estimate power, because this was performing more averaging on the signal, which gave us a better picture of the signals average power over time. 
-We also found that measuring the peak value of the non-square signals was the best way to estimate their power, because the peak value was where the majority of the power was concentrated. 
-This may not be apparent from the figures shown, but that is because they are on a dB scale, where as on a linear scale the center peak would be many times larger than any of the sidelobes.
+In \ref{design-orientation} we found that turning the decay up to about 50% was the most effective way to estimate power, because this performed more averaging on the signal.
+This gave us a better picture of the signals average power over time. 
 
- However for a rectangular pulse shape this would not work, because the whole rectangle has a constant height, which means that the power is distributed over the whole band. This means that we needed to take the total area of the rectangles to get the power of the signal, which simply requires us to convert the frequency spectrum to a dB scale and then you can simply add the width and height to get the power contained inside the signal. 
+We also found that measuring the peak value of the non-square signals was the best way to estimate their power, because the peak value was where the majority of the power was concentrated. 
+This may not be apparent from the figures shown, but that is because they are on a logarithmic scale, whereas on a linear scale the center peak would be many times larger than any of the side-lobes.
+
+ This would not work for a rectangular pulse shape, however, because the rectangle has a constant height, which means that the power is distributed over the whole band.
+ This means that we needed to take the total area of the rectangles to get the power of the signal. This required us to convert the frequency spectrum to a dB scale and then add the width and height to get the power of the signal.
 
 We found that the effect of antenna orientation was significant when trying to pick up signals. This is because of the polarization of the travelling waves.
 If our antenna matched the polarization of the transmitted signal then we would see additional power received. 
 
 ## Effect of RF Gain
-In this section of the lab we fiddled with the RF gain quite a bit in order to test the effect it had on several parameters.  
-We found that the noise floor did not get changed much when we increased the gain, with a gain in the range of 0 to 30 keeping te noise floor around the -50 dB range. However when we increased our gain up to the maximum it could go to, we found that the noise floor was actually significantly increased. But increasing the gain most certainly corresponded with an increase in the noise floor level. 
+In this section of the lab we fiddled with the RF gain quite a bit in order to test the effect it had on several parameters.
+We found that the noise floor did not get changed much when we increased the gain, with a gain in the range of 0 to 30 keeping the noise floor around the -50 dB range.
+However when we increased our gain up to the maximum it could go to, we found that the noise floor was actually significantly increased.
+But increasing the gain corresponded with an increase in the noise floor level. 
 
-We believe that the non-linear noise floor must be highly related to the hardware itself, since the noise floor does not scale very heavily with the gain itself, meaning that a large portion of the noise must be being introduced after the gain stage, which could only happen inside the hardware itself.
-If we were to take any two data points with different gains, and get the noise floor at each of those points, we would be able to estimate the noise introduced by the hardware by subtracting one value from the other, and then dividing by the gain adjustment that we made. The noise difference value would likely be the portion of the noise that is actually introduced by the RF spectrum (if we assume the amplifier is completely linear). 
+We believe that the non-linear noise floor must be highly related to the hardware itself, since the noise floor does not scale very heavily with the gain, meaning that a large portion of the noise must be being introduced after the gain stage, which could only happen inside the hardware.
+If we were to take any two data points with different gains, and get the noise floor at each of those points, we would be able to estimate the noise introduced by the hardware by subtracting one value from the other, and then dividing by the gain adjustment that we made.
+The noise difference value would likely be the portion of the noise that is actually introduced by the RF spectrum (if we assume the amplifier is completely linear). 
 
-Because the noise is not as correlated to the gain as the power is, increasing the RF gain increased the SNR of our signal by a very large amount. The only real limitation to increasing the RF gain all the way up was that it would introduce clipping in our signal, which is a non-linearity that we do not want introduced into our signal. Too small of a gain could mean that our SNR was not high enough for us to distinguish our signal from noise.
+Because the noise is not as correlated to the gain as the power is, increasing the RF gain increased the SNR of our signal by a very large amount.
+The only real limitation to increasing the RF gain all the way up was that it would introduce clipping in our signal, which is a non-linearity that we do not want introduced into our signal.
+Too small of a gain could mean that our SNR was not high enough for us to distinguish our signal from noise.
 
-A good SNR value that we found was somewhere between 20 and 30 dB, because this meant that we would not see clipping, but still have our noise be relatively low compared to the signal. But because the noise floor was so much lower than the signals we were looking at, really any gain above 10 and below 40 would probably have worked. 
+A good SNR value that we found was somewhere between 20 and 30 dB, because this meant that we would not see clipping, but still have our noise be relatively low compared to the signal.
+But because the noise floor was so much lower than the signals we were looking at, really any gain above 10 and below 40 would probably have worked. 
 
 
 ## Received Power Measurements of FM Radio Stations
@@ -318,12 +329,16 @@ We measured the relative received power from the FM stations by tuning into the 
 We then used the peak value of the FM broadcast signal to approximate the power of the signal, for reasons stated earlier. 
 We found that some of the received power values did not correspond with transmit towers in the way that we expected, with the received power corresponding inversely with distance to the transmitter, and corresponding positively with the amount of radiated power.
 
+
 ## Received Power Measurements of Digital FM Radio Stations
-When measuring the digital FM spectrum we had to convert the frequency spectrum into a dB scale in order to calculate the total power, because we needed to have like units to multiply the peak power by the width of the signal. We converted the width in Hz to dB because we wanted the total power in dB, which would be an easy conversion if we simply stuck to dB for both portions of the signal.
+When measuring the digital FM spectrum we had to convert the frequency spectrum into a dB scale in order to calculate the total power, because we needed to have like units to multiply the peak power by the width of the signal.
+We converted the width in Hz to dB because we wanted the total power in dB, which would be an easy conversion if we simply stuck to dB for both portions of the signal.
 
 
 ## Public Service Frequencies
-In this section we used the SDR to scan public service frequencies that did not have nearly as wide of a spectrum as the FM radio stations. We found that the signals present on the public service frequencies did not use up nearly as much bandwidth, which is probably why the audio quality was so much worse. It makes sense that the emergency numbers would not need as much bandwidth, because they do not care about the quality of their transmissions. 
+In this section we used the SDR to scan public service frequencies that did not have nearly as wide of a spectrum as the FM radio stations.
+We found that the signals present on the public service frequencies did not use up nearly as much bandwidth, which is probably why the audio quality was so much worse.
+It makes sense that the emergency numbers would not need as much bandwidth, because they do not care about the quality of their transmissions. 
 The static that we heard on the channel is probably a good indicator that the public service bands are mostly analog. 
 We did not hear much traffic on these frequencies, because these bands are not licensed off to the general public, and are protected so that those that can transmit on them can guarantee their messages will get through. 
 
