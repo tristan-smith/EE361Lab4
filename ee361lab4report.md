@@ -19,6 +19,18 @@ Performed: May 10th, 2019
 
 Due: May 23rd, 2019
 
+Authorship:
+
+- Arick Grootveld
+  - Introduction
+  - Discussion
+  - Conclusion
+  - References
+- Tristan Smith
+  - Experimental Design
+  - Results
+  - Abstract
+
 \thispagestyle{empty}
 \clearpage
 \setcounter{page}{1}
