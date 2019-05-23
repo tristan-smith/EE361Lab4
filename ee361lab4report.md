@@ -60,11 +60,9 @@ Electromagnetic signals traverse media by creating changing electric and magneti
 These fields have particular properties that can have a large influence on how much power you are receiving.
 The first property that can heavily influence how much received power you are getting is distance from transmitter to receiver, since for an isotropic receiver and transmitter you are radiating equal power out in all directions, the power of the signal is equally spread out over the surface of a sphere, which leads to a squared power loss over a distance.
 This means that if you were to go twice as far from the transmitter as you had been, you should receive four times less power. 
-Another factor that can heavily effect how much power you receive is the polarization of your antenna.
-As waves propagate out from the transmitter, they oscillate either vertically or horizontally, and if your receiving antenna is not matched with the correct orientation then your received power will drop heavily. 
-One final component that effects the received power of your signal is the multipath of the signals propagation. 
+One other component that effects the received power of your signal is the multipath of the signals propagation. 
 Multipath happens when a signal bounces off of a piece of terrain like a building, but still finds it's way to the receiver.
-This can cause distortions in the signal, as you get either constructive or destructive interference based on the phase change introduced by the different amounts of time that the two signals take to reach the receiver.
+This can cause distortions in the signal, as you get either constructive or destructive interference based on the phase change introduced by the different amounts of time that the two signals take to reach the receiver. The attentuation can get even worse when you do not have Line of Sight (LOS) to the transmitter because this means that you are relying on multipath signals to get your message to the receiver.
 
 Antenna polarization is another subject that is important to radio transmission, because it can heavily effect the received power.
 Antenna polarization is the orientation of the antenna with respect to the wave.
@@ -153,7 +151,7 @@ Table: Tuning In To an FM Radio Station \label{fm}
 
 ![KUGS Radio Station\label{kugs}](./KUGS.PNG)
 
-After a few songs, we measured the noise floor (Table \ref{kugs}).
+After a few songs, we measured the noise floor (Table \ref{kugs-table}).
 
 Table: Tuning in to KUGS \label{kugs-table}
 
@@ -266,23 +264,24 @@ Table: Foxhunt Relative Received Power\label{table-fox}
 
 | Location (num) | Distance (m) | Peak (dB) | RF Gain (dB) | Actual Peak (dB) |
 | --- | --- | --- | --- | --- |
-| 1 | 575.684931506849 | -20 | 38.6000000000000 | -58.6000000000000 |
-| 2 | 664.657534246575 | -20 | 38.6000000000000 | -58.6000000000000 |
-| 3 | 698.904109589041 | -25 | 38.6000000000000 | -63.6000000000000 |
-| 4 | 654.246575342466 | -29 | 38.6000000000000 | -67.6000000000000 |
-| 5 | 583.835616438356 | -20 | 38.6000000000000 | -58.6000000000000 |
-| 6 | 491.849315068493 | -15 | 38.6000000000000 | -53.6000000000000 |
-| 7 | 355.479452054795 | -11 | 38.6000000000000 | -49.6000000000000 |
-| 8 | 308.287671232877 | -7 | 38.6000000000000 | -45.6000000000000 |
-| 9 | 214.452054794521 | -20 | 19.7000000000000 | -39.7000000000000 |
-| 10 | 236.369863013699 | -20 | 19.7000000000000 | -39.7000000000000 |
-| 11 | 304.863013698630 | -30 | 19.7000000000000 | -49.7000000000000 |
-| 12 | 245.821917808219 | -20 | 19.7000000000000 | -39.7000000000000 |
-| 13 | 175.547945205479 | -10 | 19.7000000000000 | -29.7000000000000 |
-| 14 | 120.410958904110 | -10 | 19.7000000000000 | -29.7000000000000 |
-| 15 | 83.9726027397260 | -5 | 19.7000000000000 | -24.7000000000000 |
-| 16 | 50.8904109589041 | -2 | 19.7000000000000 | -21.7000000000000 |
-| 17 | 53.4246575342466 | 0 | 19.7000000000000 | -19.7000000000000 |
+|  1 |  575.7   |   - 20.0 |   38.6   |   - 58.6 | 
+|  2 |  664.7   |   - 20.0 |   38.6   |   - 58.6 | 
+|  3 |  698.9   |   - 25.0 |   38.6   |   - 63.6 | 
+|  4 |  654.2   |   - 29.0 |   38.6   |   - 67.6 | 
+|  5 |  583.8   |   - 20.0 |   38.6   |   - 58.6 | 
+|  6 |  491.8   |   - 15.0 |   38.6   |   - 53.6 | 
+|  7 |  355.5   |   - 11.0 |   38.6   |   - 49.6 | 
+|  8 |  308.3   |   - 7.0  |   38.6   |   - 45.6 | 
+|  9 |  214.5   |   - 20.0 |   19.7   |   - 39.7 | 
+| 10 |  236.4   |   - 20.0 |   19.7   |   - 39.7 | 
+| 11 |  304.9   |   - 30.0 |   19.7   |   - 49.7 | 
+| 12 |  245.8   |   - 20.0 |   19.7   |   - 39.7 | 
+| 13 |  175.5   |   - 10.0 |   19.7   |   - 29.7 | 
+| 14 |  120.4   |   - 10.0 |   19.7   |   - 29.7 | 
+| 15 |   84.0   |   - 5.0  |   19.7   |   - 24.7 | 
+| 16 |   50.9   |   - 2.0  |   19.7   |   - 21.7 | 
+| 17 |   53.4   |     0.0  |   19.7   |   - 19.7 | 
+
 
 With these results, we plotted the signal strength versus the distance from the transmitter (Figure \ref{plot-rx-distance}).
 
@@ -300,23 +299,24 @@ With these results, we plotted the signal strength versus the distance from the 
 
 ## FM Radio 
 In \ref{design-fm-radio} we began to measure signals from external sources.
-We started out by receiving from KUGS, Westerns local radio station, because it was a signal that we were guaranteed to be able to receive.
-This was a wideband FM radio signal, which came through extremely clearly in our audio tests. 
+We started out by receiving from KUGS, the wideband FM radio signal which came through extremely clearly in our audio tests. 
 The other radio stations were much harder tune into, but this probably had something to do with our ability to navigate the application we were using. 
-The small spikes we saw in our spectrum were most likely from other radio stations or transmitters that were around our target frequency, as well as reflections from buildings and geography.
 
 ## Antenna Placement and Orientation
 In \ref{design-orientation} we found that turning the decay up to about 50% was the most effective way to estimate power, because this performed more averaging on the signal.
 This gave us a better picture of the signals average power over time. 
+The small spikes we saw in our spectrum were most likely from other radio stations or transmitters that were around our target frequency, as well as reflections from buildings and geography. In Figure \ref{angle1} you can see a narrow band interferer that probably came from another transmitter, because the peak value is far too high to be multipath from off of a building.   
 
 We also found that measuring the peak value of the non-square signals was the best way to estimate their power, because the peak value was where the majority of the power was concentrated. 
 This may not be apparent from the figures shown, but that is because they are on a logarithmic scale, whereas on a linear scale the center peak would be many times larger than any of the side-lobes.
 
- This would not work for a rectangular pulse shape, however, because the rectangle has a constant height, which means that the power is distributed over the whole band.
- This means that we needed to take the total area of the rectangles to get the power of the signal. This required us to convert the frequency spectrum to a dB scale and then add the width and height to get the power of the signal.
+This would not work for a rectangular pulse shape, however, because the rectangle has a constant height, which means that the power is distributed over the whole band.
+This means that we needed to take the total area of the rectangles to get the power of the signal. This required us to convert the frequency spectrum to a dB scale and then add the width and height to get the power of the signal.
 
 We found that the effect of antenna orientation was significant when trying to pick up signals. This is because of the polarization of the travelling waves.
 If our antenna matched the polarization of the transmitted signal then we would see additional power received. 
+In addition to our experiments with antenna polarization, we also found that touching the antenna improved our signal strength at certain frequencies (Figure \ref{touch} and Figure \ref{no-touch}). This was most likely due to the fact that our antenna was not the correct length to receive at these specific frequencies, and our bodies were actually more apt antennas corresponding to the particular wavelengths.  
+
 
 ## Effect of RF Gain
 In this section of the lab we fiddled with the RF gain quite a bit in order to test the effect it had on several parameters.
@@ -333,7 +333,7 @@ The only real limitation to increasing the RF gain all the way up was that it wo
 Too small of a gain could mean that our SNR was not high enough for us to distinguish our signal from noise.
 
 A good SNR value that we found was somewhere between 20 and 30 dB, because this meant that we would not see clipping, but still have our noise be relatively low compared to the signal.
-But because the noise floor was so much lower than the signals we were looking at, really any gain above 10 and below 40 would probably have worked. 
+But because the noise floor was so much lower than the signals we were looking at (Table \ref{rfgain}), really any gain above 10 and below 40 would probably have worked. 
 
 
 ## Received Power Measurements of FM Radio Stations
@@ -355,7 +355,8 @@ The static that we heard on the channel is probably a good indicator that the pu
 We did not hear much traffic on these frequencies, because these bands are not licensed off to the general public, and are protected so that those that can transmit on them can guarantee their messages will get through. 
 
 ## Foxhunting and Path-Loss Modeling
-In section  
+The relative received powers that we got were about what we would expect given the theory stated earlier. As the graph in Figure \ref{plot-rx-distance} shows the signal got weaker the further away from the transmitter we got. 
+There are a few data points that show places where we actually got better received power the further we got from the transmitter, but this is just a fluke in our data collection process, as we did get some measurements behind buildings that might have caused these anomalous measurements due to multipath and loss of LOS. At some points we had to adjust the RF gain so that we were not saturating, which goes to show the magnitude of change that happens over distance. 	
 
 \newpage
 # Conclusion
@@ -365,9 +366,9 @@ We saw both digital and analog signals using our SDR, which gives us a better id
 We also were able to perform many different measurements with relative received power, under many differing circumstances. 
 We were able to test how antenna orientation, distance, and line of sight effected the relative received power. 
 We were also able to adjust several digital parameters and determine their effects on the SNR and signal strength. Because of the SDR program that we were running, we saw how different power levels in signals showed up on the spectrum, and learned how to estimate relative received power based on the shape of the signal itself. 
+The lab served as an introduction to RF transmission in an interesting and novel way. 
 
 \newpage
-# References
 
 \begin{thebibliography}{2}
 
